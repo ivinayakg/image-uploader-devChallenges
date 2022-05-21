@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <!-- main form here -->
+        <div class="form">
+          <!-- drop image here -->
+          <div class="drop_zone">
+            <img src="./image.svg" alt="" class="image" />
+            <h4 class="title">Upload Your Image Here (Drag n Drop or click)</h4>
+          </div>
+          <!--  -->
+
+          <label for="imageInput" class="btn">
+            <input type="file" name="imageInput" id="imageInput" />
+            Upload A File
+          </label>
+
+          <a href="./all-files/" class="btn">All Files</a>
+        </div>
+        <!-- -------- -->
+      </div>
+
+      <!-- loading state here -->
+      <div class="loader">
+        <div class="loader_cont">
+          <h2>Uploading...</h2>
+          <div class="bar">
+            <div class="bar_rod"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
