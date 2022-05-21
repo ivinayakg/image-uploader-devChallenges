@@ -33,6 +33,7 @@ const getAllImages = async () => {
     const res = await fetch("/upload");
     const json = await res.json();
     const files = json.data.files;
+
     files.forEach((filePath) => {
       container.append(createImageCard(filePath));
     });

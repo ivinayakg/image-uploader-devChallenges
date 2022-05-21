@@ -41,7 +41,9 @@ app.get("/upload", async (req, res) => {
       .status(200)
       .json({ success: true, data: { files: projectFiles } });
   } catch (error) {
-    res.status(500).json({ success: false, message: "Something Went Wrong" });
+    res
+      .status(500)
+      .json({ success: false, message: "Something Went Wrong", error });
     console.log(error);
   }
 
