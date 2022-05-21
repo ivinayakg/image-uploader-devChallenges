@@ -31,7 +31,8 @@ const createImageCard = (imgLink) => {
 const getAllImages = async () => {
   try {
     const res = await fetch("/upload");
-    const files = (await res.json()).data.files;
+    const json = await res.json();
+    const files = json.data.files;
     files.forEach((filePath) => {
       container.append(createImageCard(filePath));
     });
