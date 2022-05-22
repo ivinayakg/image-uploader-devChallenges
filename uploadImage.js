@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 let streamifier = require("streamifier");
 const cloudinary = require("cloudinary").v2;
 
