@@ -1,5 +1,4 @@
 require("express-async-errors");
-require("dotenv").config();
 const cloudResourcePath = "devChallenges/uploadImage/";
 
 const express = require("express");
