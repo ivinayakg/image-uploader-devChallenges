@@ -19,11 +19,15 @@ app.use("/files", express.static("upload"));
 
 app.post("/upload", uploader.single("file"), async (req, res) => {
   const file = req.file.buffer;
-  const uploadedFile = await uploadeImage(file, cloudResourcePath);
-  return res.status(200).json({
-    success: true,
-    data: { uploadedFileurl: uploadedFile.secure_url },
-  });
+  try {
+    const uploadedFile = await uploadeImage(file, cloudResourcePath);
+    return res.status(200).json({
+      success: true,
+      data: { uploadedFileurl: uploadedFile.secure_url },
+    });
+  } catch (error) {
+    return res.status(404).json({ success: false, error });
+  }
 });
 
 app.get("/upload", async (req, res) => {
